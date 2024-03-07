@@ -13,16 +13,17 @@ export const Dashboard = () => {
   const { goals, isLoading, isError, message } = useSelector(
     (state) => state.goals
   );
-  console.log(goals);
 
   useEffect(() => {
-    if (isError) {
-      console.log(message);
-    }
     if (!user) {
       navigate("/login");
     }
-    dispatch(getGoals());
+    if (user) {
+      if (isError) {
+        console.log(message);
+      }
+      dispatch(getGoals());
+    }
     return () => {
       dispatch(reset());
     };

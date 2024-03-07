@@ -24,6 +24,7 @@ export const login = async (userData) => {
 
 // logout user;
 export const logout = async () => {
+  console.log("inside logout");
   localStorage.removeItem("user");
 };
 
