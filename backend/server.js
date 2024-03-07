@@ -10,7 +10,8 @@ connectDB();
 
 app.use(express.json()); //request body parser;
 app.use(express.urlencoded({ extended: false }));
-app.use("/api/goals", require("./routes/goalsRouter"));
+app.use("/api/goals", require("./routes/goalsRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
 app.use(errorHandler);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
