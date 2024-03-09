@@ -16,21 +16,21 @@ app.use("/api/users", require("./routes/userRoutes"));
 app.use(errorHandler);
 
 // serve frontend
-if (process.env.NODE_ENV === "production") {
-  // app.use(express.static.apply(path.join(__dirname, "../frontend/dist")));
+// if (process.env.NODE_ENV === "production") {
+// app.use(express.static.apply(path.join(__dirname, "../frontend/dist")));
 
-  // app.get("*", (req, res) =>
-  //   res.sendFile(
-  //     path.resolve(__dirname, "../", "frontend", "dist", "index.html")
-  //   )
-  // );
-  app.get("/", (req, res) => {
-    app.use(express.static(path.resolve(__dirname, "frontend", "dist")));
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-  });
-} else {
-  app.get("/", (req, res) => res.send("Please set to production"));
-}
+// app.get("*", (req, res) =>
+//   res.sendFile(
+//     path.resolve(__dirname, "../", "frontend", "dist", "index.html")
+//   )
+// );
+app.get("/", (req, res) => {
+  app.use(express.static(path.resolve(__dirname, "frontend", "dist")));
+  res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+});
+// } else {
+//   app.get("/", (req, res) => res.send("Please set to production"));
+// }
 // app.get("/", (res) => {
 //   return res.json({ ok: "ok" });
 // });
