@@ -15,7 +15,7 @@ app.use("/api/goals", require("./routes/goalsRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
 app.use(errorHandler);
 
-// // serve frontend
+// serve frontend
 if (process.env.NODE_ENV === "production") {
   app.use(express.static.apply(path.join(__dirname, "../frontend/dist")));
 
