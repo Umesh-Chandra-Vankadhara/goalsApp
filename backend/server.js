@@ -1,4 +1,4 @@
-const path = require("path");
+// const path = require("path");
 const express = require("express");
 const colors = require("colors");
 const dotenv = require("dotenv").config();
@@ -24,14 +24,14 @@ app.use(errorHandler);
 //     path.resolve(__dirname, "../", "frontend", "dist", "index.html")
 //   )
 // );
-app.get("/", (req, res) => {
-  app.use(express.static(path.resolve(__dirname, "frontend", "dist")));
-  res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-});
+// app.get("/", (req, res) => {
+//   app.use(express.static(path.resolve(__dirname, "frontend", "dist")));
+//   res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+// });
 // } else {
 //   app.get("/", (req, res) => res.send("Please set to production"));
 // }
-// app.get("/", (res) => {
-//   return res.json({ ok: "ok" });
-// });
+app.get("/health", (req, res) => {
+  return res.json({ ok: "ok" });
+});
 app.listen(port, () => console.log(`Server started on port ${port}`));
