@@ -4,8 +4,6 @@
   "description": "Application to manage goals data ",
   "main": "server.js",
   "scripts": {
-    "install": "npm install && cd backend/frontend && npm install",
-    "build": "cd backend/frontend && npm run build",
     "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
     "start-backend": "nodemon backend/server.js",
     "start-frontend": "cd frontend && npm run dev"
